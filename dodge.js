@@ -2,7 +2,7 @@ var dodge = {};
 var play = {};
 
 var enymy = {}; 
-var imagesCount = 3;
+var imagesCount = 1;
 var eElements = new Array(3);
 var images  = new Image();
 var playImg  = new Image();
@@ -50,8 +50,8 @@ dodge.boot = function() {
 
   
 dodge.loadImages = function(){  
-  enymy.width = 53;   
-  enymy.height = 57 ; 
+  enymy.width = 60;   
+  enymy.height = 59; 
   enymy.setPosition = function(x, y){  
 	  enymy.X = x;  
 	  enymy.Y = y; 
@@ -61,11 +61,11 @@ dodge.loadImages = function(){
  //'play' will be the context now     
  //attributes  
 
- play.width = 60;   
- play.height = 120;  
+ play.width = 100;   
+ play.height = 173;  
  
-btStart.height = 60;
-btStart.width = 277;
+btStart.height = 113;
+btStart.width = 353;
 //methods   
  play.setPosition = function(x, y){  
   play.X = x;  
@@ -73,8 +73,8 @@ btStart.width = 277;
   }   
   
   btStart.src = "start.png";
-  images.src = "gifts.png";  
-  playImg.src = "hero.png" ;
+  images.src = "money.png";  
+  playImg.src = "pigValentine2.png" ;
   play.img = playImg;
   btStart.onload = function(){
  	dodge.notifyImg((dodge.width/2)- (btStart.width/2), (dodge.height/2) - (btStart.height/2));
@@ -167,8 +167,9 @@ dodge.drawFigure = function(x, y, width, height, color) {
 }
 
 dodge.drawEnemy = function(i,x, y) {
-    var ind = eElements[i];
-   dodge.context.drawImage(images,Number(enymy.width * ind),0, enymy.width,enymy.height, x, y, enymy.width,enymy.height);
+    //var ind = eElements[i];
+   //dodge.context.drawImage(images.img,Number(enymy.width * ind),0, enymy.width,enymy.height, x, y, enymy.width,enymy.height);
+   dodge.context.drawImage(images,x, y);
    return this;
 
 }
