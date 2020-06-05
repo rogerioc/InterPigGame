@@ -259,7 +259,7 @@ dodge.paint = function() {
 }
 
 dodge.setScore = function(score) {
-  $('.scoreBoard').html('<div class="subtext">Presentes</div>' + score).hide().fadeIn(); 
+  $('.scoreBoard').html('<div class="subtext">Money</div>' + score).hide().fadeIn(); 
   if ('chrome' in window && chrome !== undefined && chrome.browserAction !== undefined) {
 	  chrome.browserAction.setBadgeBackgroundColor({color:[200, 0, 0, 0]});
 	  chrome.browserAction.setBadgeText({text: String(score) });
